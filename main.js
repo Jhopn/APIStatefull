@@ -20,7 +20,7 @@ app.post(("/tasks"), (requisicao, resposta) => {
 
 app.put("/tasks/:tasksId", (requisicao, resposta) =>{
     const { id } = requisicao.params
-    const part = tarefas.find((element) => element.id === id)
+    const part = tarefas.find(element => tarefas.id === id)
     if(part){
         const index = tarefas.indexOf(part)
         tarefas[index].complet = !tarefas[index].complet
@@ -32,7 +32,7 @@ app.put("/tasks/:tasksId", (requisicao, resposta) =>{
 
 app.get(("/tasks/:tasksId"), (requisicao,resposta) =>{
     const { id } = requisicao.params
-    const part = tarefas.find((element) => element.id === id)
+    const part = tarefas.find(element => tarefas.id === id)
     if(part){
         const index = tarefas.indexOf(part)
         return resposta.json(tarefas[index])
@@ -43,7 +43,7 @@ app.get(("/tasks/:tasksId"), (requisicao,resposta) =>{
 
 app.delete(("/tasks/:tasksId", (requisicao, resposta) =>{
     const { id } = requisicao.params
-    const part = tarefas.find((element) => element.id === id)
+    const part = tarefas.find(element => tarefas.id === id)
     if(part){
         const index = tarefas.indexOf(part)
         tarefas.splice(index, 1)
